@@ -1,7 +1,7 @@
 // import ExpenseItem from "./component/ExpenseItem";
 
 import Expenses from "./component/Expenses/Expenses";
-
+import NewExpense from "./component/NewExpense/NewExpense";
 
 
 
@@ -29,7 +29,7 @@ function App() {
   ];
   return (
     <div>
-      
+      <NewExpense/>
       <Expenses items={expenses}/>
     {/* {expenses.map(expense=><ExpenseItem id={expense.id} title={expense.title} amount={expense.amount} date={expense.date}/>)} */}
      
