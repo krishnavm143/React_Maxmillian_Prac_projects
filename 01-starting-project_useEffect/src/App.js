@@ -9,7 +9,7 @@ function App() {
   useEffect(()=>{
     const storedUserLoggedInInformation=localStorage.getItem('isLoggedIn')
 
-    setIsLoggedIn(true)
+    storedUserLoggedInInformation && setIsLoggedIn(true)
   },[])
 
   const loginHandler = (email, password) => {
