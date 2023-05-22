@@ -3,7 +3,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./pages/Root";
 import HomePage from "./pages/HomePage";
-import EventsPage from "./pages/EventsPage";
+import Events, { loader as eventsLoader } from "./pages/Events";
 import EventDetailPage from "./pages/EventDetailPage";
 import NewEventPage from "./pages/NewEventPage";
 import EditEventPage from "./pages/EditEventPage";
@@ -30,10 +30,13 @@ import EventRootLayout from "./pages/EventRootLayout";
 // 5. Ensure that the links in MainNavigation receive an "active" class when active
 // done
 // 6. Output a list of dummy events to the EventsPage
+// done
 //    Every list item should include a link to the respective EventDetailPage
+// done
 // 7. Output the ID of the selected event on the EventDetailPage
+// done
 // BONUS: Add another (nested) layout route that adds the <EventNavigation> component above all /events... page components
-
+// done
 const router = createBrowserRouter([{
   path: '/',
   element: <Root />,
@@ -48,7 +51,8 @@ const router = createBrowserRouter([{
         {
           //  path: '',
           index: true,
-          element: <EventsPage />
+          element: <Events />,
+          loader: eventsLoader,
         },
         { path: ':eventId', element: <EventDetailPage /> },
         { path: 'new', element: <NewEventPage /> },
