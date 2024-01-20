@@ -1,10 +1,18 @@
+import { Cart } from "./components/cart";
+import { Header } from "./components/header";
+import { Meals } from "./components/meals";
+import { CartContextProvider } from "./store/cart-context";
+import { UserProgressContextProvider } from "./store/user-progress-context";
+
 function App() {
   return (
-    <>
-      <h1>You got this 💪</h1>
-      <p>Stuck? Not sure how to proceed?</p>
-      <p>Don't worry - we've all been there. Let's build it together!</p>
-    </>
+    <UserProgressContextProvider>
+      <CartContextProvider>
+        <Header />
+        <Meals />
+        <Cart />
+      </CartContextProvider>
+    </UserProgressContextProvider>
   );
 }
 
